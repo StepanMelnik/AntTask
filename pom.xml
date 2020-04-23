@@ -1,0 +1,187 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.sme</groupId>
+        <artifactId>parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.sme.ant</groupId>
+    <artifactId>ant-task</artifactId>
+    <version>0.0.0.Dev-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>${project.organization.name} :: ${application.name}</name>
+    <url>https://github.com/StepanMelnik/AntTask</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>stepan</id>
+            <name>Stepan Melnyk</name>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:StepanMelnik/AntTask.git</connection>
+        <developerConnection>scm:git:git@github.com:StepanMelnik/AntTask.git</developerConnection>
+        <url>https://github.com/StepanMelnik/AntTask</url>
+    </scm>
+
+    <!-- Local Sonatype Nexus Repository -->
+    <distributionManagement>
+        <repository>
+            <id>repository.sme.com</id>
+            <url>http://repository.sme.com:8081/repository/maven-internal-release/</url>
+        </repository>
+        <snapshotRepository>
+            <id>repository.sme.com</id>
+            <url>http://repository.sme.com:8081/repository/maven-internal-snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <application.name>Ant Task</application.name>
+
+        <ant.version>1.9.4</ant.version>
+        <httpclient.vesion>4.5.12</httpclient.vesion>
+        <commons-lang3.version>3.10</commons-lang3.version>
+        <commons-collections4.version>4.4</commons-collections4.version>
+        <slf4j.version>1.7.30</slf4j.version>
+        
+        <junit-jupiter.version>5.6.2</junit-jupiter.version>
+        <mockito.version>1.10.19</mockito.version>
+        <openpojo.version>0.8.3</openpojo.version>
+        <jetty-rewrite.version>9.4.28.v20200408</jetty-rewrite.version>
+    </properties>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.apache.ant/ant -->
+        <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant</artifactId>
+            <version>${ant.version}</version>
+        </dependency>
+    
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${httpclient.vesion}</version>
+        </dependency>
+    
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>${commons-collections4.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.slf4j -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <!-- Test -->
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-all -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/com.openpojo/openpojo -->
+        <dependency>
+            <groupId>com.openpojo</groupId>
+            <artifactId>openpojo</artifactId>
+            <version>${openpojo.version}</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- mock server does not support redirection  -->
+        <!-- https://mvnrepository.com/artifact/org.mock-server/mockserver-netty -->
+        <!--dependency>
+            <groupId>org.mock-server</groupId>
+            <artifactId>mockserver-netty</artifactId>
+            <version>5.10.0</version>
+            <scope>test</scope>
+        </dependency-->
+        
+        <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-rewrite -->
+        <dependency>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-rewrite</artifactId>
+            <version>${jetty-rewrite.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <fork>true</fork>
+                    <forceJavacCompilerUse>true</forceJavacCompilerUse>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.sme.mojo</groupId>
+                <artifactId>info-maven-plugin</artifactId>
+                <version>${project.version}</version>
+                <configuration>
+                    <skip>false</skip>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>info</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

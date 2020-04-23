@@ -1,0 +1,10 @@
+/.classpath
+/.project
+/.idea/
+/.settings/
+/.checkstyle
+/ant.log
+/target/
+/bin/
+/build/
+ 
