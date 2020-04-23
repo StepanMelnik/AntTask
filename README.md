@@ -1,8 +1,7 @@
 # AntTask
-Ant task to work with HTTP client that supports redirect strategy.
+A bunch of useful Ant tasks.
 
-## Description
-
+## HTTP client with RedirectStrategy 
 HTTP client uses RedirectStrategy implementation that automatically redirects all HEAD, GET, POST and DELETE requests.
 
 ### Usage
@@ -64,3 +63,8 @@ Perform HTTP request and save response as a file:
 
 ### TODO
 Add POST and other methods to redirect a request.
+
+## Xml2Sql
+Ant target that allows to parse a gigantic xml file with millions of rows and save the rows into database
+
+### TODO (close to commit)
