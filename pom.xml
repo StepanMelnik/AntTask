@@ -57,7 +57,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <application.name>Ant Task</application.name>
 
-        <ant.version>1.9.4</ant.version>
+        <ant.version>1.10.9</ant.version>
         <httpclient.vesion>4.5.12</httpclient.vesion>
         <commons-lang3.version>3.10</commons-lang3.version>
         <commons-collections4.version>4.4</commons-collections4.version>
